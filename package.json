@@ -1,0 +1,21 @@
+{
+  "name": "DocApp",
+  "version": "0.0.0",
+  "description": "musala test application",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vgeorgiev",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.2.1",
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
+    "requirejs": "^2.1.18",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "grunt-copy": "^0.1.0"
+  }
+}
