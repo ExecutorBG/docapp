@@ -3,7 +3,9 @@ require.config({
         jquery: 'libs/jquery',
         jqueryui: 'libs/jquery-ui',
         underscore: 'libs/underscore',
-        backbone: 'libs/backbone'
+        backbone: 'libs/backbone',
+        text : 'libs/text',
+        templates : "./../templates"
     },
     shim: {
         'backbone': {
@@ -15,6 +17,7 @@ require.config({
             exports: 'backbone'
         },
         'jqueryui': {
+            export: "$",
             deps: ['jquery']
         }
     }

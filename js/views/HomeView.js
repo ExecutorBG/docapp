@@ -11,9 +11,8 @@ define([
 
 
         render: function () {
-            debugger;
             var headerTemplate = '<div class="gridControls"><input type="button" value="Add Document"><input type="text" id="filter"></div>' + this.createSelectElement();
-            this.$el.html(_.template(headerTemplate)({}) + '<div id="documentsGrid" class="documentsGrid"></div>');
+            this.$el.html(headerTemplate + '<div id="documentsGrid" class="documentsGrid"></div>');
             this.$el.find('#filter').on('keyup', _.bind(this.filterResults, this));
             this.$el.find('#filter').on('paste', _.bind(function () {
                 setTimeout(_.bind(this.filterResults, this), 0)
@@ -39,7 +38,7 @@ define([
             var thTemplate = '<div class="tableHeader"><div class="id">ID</div><div class="category">Category</div><div class="name">Name</div><div class="description">Description</div><div class="created">Creation Date</div><div class="modified">Last Modification</div></div>';
             var tdTemplate = '<div class="tableRow"><div class="id"><%= id %></div><div class="category"><%= category %></div><div class="name"><%= name %></div><div class="description"><%= description %></div><div class="created"><%= creationDate %></div><div class="modified"><%= lastModifiedDate %></div></div>';
 
-            var html = _.template(thTemplate)({});
+            var html = thTemplate;
             collection.forEach(function (document) {
                 var options = {
                     name: document.name,

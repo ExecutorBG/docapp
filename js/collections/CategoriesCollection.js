@@ -30,6 +30,10 @@ define([
 
         getByName: function (name) {
             return this.where({name: name})[0] || null;
+        },
+
+        addCategory: function (name){
+            this.add(new this.model({name: name}));
         }
 
     });
