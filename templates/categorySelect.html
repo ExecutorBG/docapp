@@ -1,0 +1,9 @@
+<label class="categorySelectLabel" for="categorySelect">Select Category</label>
+<select id="categorySelect" name="categorySelect">
+    <% if (!excludeAny) { %>
+    <option>Any</option>
+    <% }%>
+    <% _.each(categories, function(category) { %>
+    <option value='<%= category.name %>'><%= category.name %></option>
+    <% }); %>
+</select>

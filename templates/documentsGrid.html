@@ -1,0 +1,25 @@
+<h1>Documents:</h1>
+<table id="documents" class="ui-widget ui-widget-content">
+    <thead>
+    <tr class="ui-widget-header ">
+        <th>Id</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Creation Date</th>
+        <th>Last Modified</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(documents, function(document) { %>
+    <tr>
+        <td><%= document.id %></td>
+        <td><%= document.category.name %></td>
+        <td><%= document.name %></td>
+        <td><%= document.description %></td>
+        <td><%= document.creationDate %></td>
+        <td><%= document.lastModifiedDate %></td>
+    </tr>
+    <% }); %>
+    </tbody>
+</table>

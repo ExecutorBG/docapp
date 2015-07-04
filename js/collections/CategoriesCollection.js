@@ -1,8 +1,6 @@
 define([
-    'underscore',
-    'backbone',
     'models/CategoriesModel'
-], function (_, Backbone, CategoriesModel) {
+], function (CategoriesModel) {
 
     var CategoriesCollection = Backbone.Collection.extend({
 
@@ -29,11 +27,19 @@ define([
         },
 
         getByName: function (name) {
-            return this.where({name: name})[0] || null;
+            return this.findWhere({name: name}) || null;
         },
 
         addCategory: function (name){
             this.add(new this.model({name: name}));
+        },
+
+        removeCategory: function (name){
+            this.remove(this.getByName(name));
+        },
+
+        updateCategory: function (name, newName){
+            this.getByName(name).set('name', newName);
         }
 
     });

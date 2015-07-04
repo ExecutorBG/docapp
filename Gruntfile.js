@@ -25,10 +25,17 @@ module.exports = function(grunt) {
                         cwd: 'node_modules/backbone/',
                         src: 'backbone.js',
                         dest: 'js/libs'
-                    },                    {
+                    },
+                    {
                         expand: true,
                         cwd: 'node_modules/requirejs-text/',
                         src: 'text.js',
+                        dest: 'js/libs'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/datatables/media/js',
+                        src: '*.js',
                         dest: 'js/libs'
                     },
                     {

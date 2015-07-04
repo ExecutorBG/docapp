@@ -1,0 +1,15 @@
+<h1>Existing Categories:</h1>
+<table id="categories" class="ui-widget ui-widget-content">
+    <thead>
+    <tr class="ui-widget-header ">
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(categories, function(category) { %>
+    <tr>
+        <td><%= category.name %></td>
+    </tr>
+    <% }); %>
+    </tbody>
+</table>

@@ -5,30 +5,36 @@ require.config({
         underscore: 'libs/underscore',
         backbone: 'libs/backbone',
         text : 'libs/text',
-        templates : "./../templates"
+        templates : "./../templates",
+        datatables : "libs/jquery.dataTables"
     },
     shim: {
+
+        'underscore':{
+            exports: '_'
+        },
+
         'backbone': {
             //These script dependencies should be loaded before loading
             //backbone.js
             deps: ['underscore', 'jquery'],
-            //Once loaded, use the global 'backbone' as the
+            //Once loaded, use the global 'Backbone' as the
             //module value.
-            exports: 'backbone'
+            exports: 'Backbone'
         },
-        'jqueryui': {
-            export: "$",
-            deps: ['jquery']
-        }
+            jqueryui:
+            {
+                deps: ["jquery"]
+            }
     }
 });
 
 require([
     'app',
-    'jquery',
     'underscore',
     'backbone',
-    'jqueryui'
+    'jqueryui',
+    'datatables'
 ],
 function(App) {
     App.initialize();

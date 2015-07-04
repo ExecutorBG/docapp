@@ -1,9 +1,7 @@
 define([
-    'underscore',
-    'backbone',
     'models/DocumentsModel',
     'collections/CategoriesCollection'
-], function (_, Backbone, DocumentsModel, CategoriesCollection) {
+], function (DocumentsModel, CategoriesCollection) {
 
     var DocumentsCollection = Backbone.Collection.extend({
 
@@ -15,17 +13,25 @@ define([
 
         loadDocuments: function () {
             var documents = [
-                {id: 1, name: 'System Architecture', description: "some description", categoryName: "Technical", creationDate: new Date(), lastModifiedDate: new Date()}
+                {id: 1, name: 'System Architecture', description: "some description", category: {name: "Technical"}, creationDate: new Date(), lastModifiedDate: new Date()},
+                {id: 2, name: 'JS For DUmmies', description: "some description", category: {name: "Programming"}, creationDate: new Date(), lastModifiedDate: new Date()}
             ];
             //#todo load documents from an outside source
             _.forEach(documents, _.bind(function (document) {
-                document.category = CategoriesCollection.getByName(document.categoryName);
+                document.category = CategoriesCollection.getByName(document.category.name);
                 this.add(new this.model(document));
                 if (this.lastId < document.id) {
                     this.lastId = document.id;
                 }
-                delete document.categoryName;
             }, this));
+        },
+
+        updateDocumentInformation: function(id, options){
+            this.get(id).set({
+                name: options.name,
+                description: options.description,
+                category: CategoriesCollection.getByName(options.categoryName)
+            });
         },
 
         addDocument: function (options) {
@@ -40,6 +46,10 @@ define([
                 id++;
             } // this while should normally never be true;
             return id;
+        },
+
+        removeById: function (id){
+            this.remove(this.get(id));
         },
 
         writeDocuments: function () {

@@ -1,17 +1,17 @@
-.documentsGrid .tableHeader div,
-.documentsGrid .tableRow div
-{
-    display: inline-block;
-    margin: 4px;
-}
+/*.documentsGrid .tableHeader div,*/
+/*.documentsGrid .tableRow div*/
+/*{*/
+    /*display: inline-block;*/
+    /*margin: 4px;*/
+/*}*/
 
-.documentsGrid .id {
-    width: 30px;
-}
-.documentsGrid .category {
-    width: 140px;
-}
-.documentsGrid .name {
-    width: 140px;
-}
+/*.documentsGrid .id {*/
+    /*width: 30px;*/
+/*}*/
+/*.documentsGrid .category {*/
+    /*width: 140px;*/
+/*}*/
+/*.documentsGrid .name {*/
+    /*width: 140px;*/
+/*}*/
 

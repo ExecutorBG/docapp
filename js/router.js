@@ -1,13 +1,10 @@
 // Filename: router.js
 define([
-    'jquery',
-    'underscore',
-    'backbone',
     'views/HomeView',
     'views/EditCategoriesView',
     'collections/CategoriesCollection',
     'collections/DocumentsCollection'
-], function ($, _, Backbone, HomeView, EditCategoriesView, CategoriesCollection, DocumentsCollection) {
+], function (HomeView, EditCategoriesView, CategoriesCollection, DocumentsCollection) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
