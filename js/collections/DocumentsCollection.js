@@ -30,7 +30,8 @@ define([
             this.get(id).set({
                 name: options.name,
                 description: options.description,
-                category: CategoriesCollection.getByName(options.categoryName)
+                category: CategoriesCollection.getByName(options.categoryName),
+                lastModifiedDate: new Date()
             });
         },
 
