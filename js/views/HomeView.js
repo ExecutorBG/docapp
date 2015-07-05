@@ -30,16 +30,9 @@ define([
         },
 
         renderDocuments: function (collection) {
-            // renders the supplied documents collection (filtered collections have json like format)
-            if (collection == this.collection){
-                collection = collection.toJSON();
-            } else {
-                collection = JSON.parse(JSON.stringify(collection));
-            }
-
-
+            // renders the supplied documents collection
             var el = $('#documentsGrid');
-            el.html(_.template(gridTemplate)({documents: collection}));
+            el.html(_.template(gridTemplate)({documents: collection.toJSON()}));
 
             this.dataTable = $('#documents').DataTable();
             var table = this.dataTable;
@@ -60,9 +53,7 @@ define([
             var category = CategoriesCollection.getByName(categoryFilter);
             var collection = this.collection;
             if (category) {
-                collection = collection.filter(function (document) {
-                    return document.get('category') == category;
-                });
+                collection = collection.filterByCategory(category)
             }
             this.renderDocuments(collection);
         },

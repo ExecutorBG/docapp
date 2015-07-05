@@ -37,8 +37,16 @@ define([
 
         addDocument: function (options) {
             options.id = this.getUniqueId();
+            options.creationDate = new Date();
+            options.lastModifiedDate = new Date();
             this.add(new this.model(options));
             this.lastId = options.id;
+        },
+
+        filterByCategory: function (category){
+            return new DocumentsCollection(this.filter(function(document){
+                return document.get('category') == category;
+            }));
         },
 
         getUniqueId: function () {

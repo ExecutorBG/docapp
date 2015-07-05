@@ -1,4 +1,4 @@
-<div id="edit-document-form" title="Edit document">
+<div id="add-document-form" title="Add document">
     <p class="validateTips">All form fields are required.</p>
     <form>
         <fieldset>
@@ -7,14 +7,7 @@
             <%= categorySelector %>
             <label for="description">Description</label>
             <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all">
-            <!-- Allow form submission with keyboard without duplicating the dialog button -->
-            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
         </fieldset>
     </form>
 </div>
-
-
-<div id="documents-contain" class="ui-widget">
-</div>
-<button id="edit-document">Edit document</button>
-<button id="delete-document">Delete document</button>
+<button id="add-document">Add document</button>

@@ -2,16 +2,15 @@
 define([
     'views/HomeView',
     'views/EditCategoriesView',
-    'collections/CategoriesCollection',
-    'collections/DocumentsCollection'
-], function (HomeView, EditCategoriesView, CategoriesCollection, DocumentsCollection) {
+    'views/UploadView'
+], function (HomeView, EditCategoriesView, UploadView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             // Define some URL routes
             'upload': 'uploadDocument',
             'categories': 'editCategories',
-
+            '': 'listDocuments',
             // Default
             '*actions': 'defaultAction'
         }
@@ -22,13 +21,19 @@ define([
         var app_router = new AppRouter;
 
         app_router.on('route:uploadDocument', function () {
-
+            var uploadView = new UploadView();
+            uploadView.render();
 
         });
 
         app_router.on('route:editCategories', function () {
             var editView = new EditCategoriesView();
             editView.render();
+        });
+
+        app_router.on('route:listDocuments', function () {
+            var homeView = new HomeView();
+            homeView.render();
         });
 
         app_router.on('route:defaultAction', function (actions) {
