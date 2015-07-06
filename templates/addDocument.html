@@ -2,11 +2,17 @@
     <p class="validateTips">All form fields are required.</p>
     <form>
         <fieldset>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
-            <%= categorySelector %>
-            <label for="description">Description</label>
-            <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all">
+            <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="" class="text ui-widget-content ui-corner-all">
+            </div>
+            <div class="form-field">
+                <%= categorySelector %>
+            </div>
+            <div class="form-field">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" value="" class="text ui-widget-content ui-corner-all">
+            </div>
         </fieldset>
     </form>
 </div>
