@@ -11,13 +11,12 @@
   "dependencies": {
     "backbone": "^1.2.1",
     "datatables": "^1.10.7",
+    "express": "^4.13.1",
+    "grunt-contrib-copy": "^0.8.0",
     "jquery": "^2.1.4",
     "jquery-ui": "^1.10.5",
     "requirejs": "^2.1.18",
     "requirejs-text": "^2.0.12",
     "underscore": "^1.8.3"
-  },
-  "devDependencies": {
-    "grunt-copy": "^0.1.0"
   }
 }
